@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e2a3a 0%, #0f1724 100%);
+    color: #e2e8f0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #3b82f6;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+header p {
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+.upload-section {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.upload-section h2 {
+    margin-bottom: 20px;
+    color: #cbd5e1;
+}
+
+#uploadForm {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+input[type="file"] {
+    background: #0f1724;
+    color: #e2e8f0;
+    padding: 12px 20px;
+    border: 2px solid #334155;
+    border-radius: 10px;
+    cursor: pointer;
+    flex: 1;
+    max-width: 400px;
+}
+
+input[type="file"]:hover {
+    border-color: #3b82f6;
+}
+
+button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+#loading {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.results-section {
+    background: #0f1724;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 5px solid #3b82f6;
+}
+
+.verdict {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.verdict.safe {
+    background: #166534;
+    color: #86efac;
+}
+
+.verdict.suspicious {
+    background: #854d0e;
+    color: #fde047;
+}
+
+.verdict.malicious {
+    background: #7f1d1d;
+    color: #fecaca;
+}
+
+.details p {
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+code {
+    background: #1e293b;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    word-break: break-all;
+}
+
+.analysis-block {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #334155;
+}
+
+.analysis-block h3 {
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+.analysis-block ul {
+    margin-left: 25px;
+    margin-top: 8px;
+}
+
+.history-section {
+    background: #1e293b;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.history-section h2 {
+    margin-bottom: 15px;
+}
+
+#historyList {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.history-item {
+    background: #0f1724;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.history-item .filename {
+    font-weight: bold;
+    color: #cbd5e1;
+}
+
+.history-item .verdict-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.history-item .safe { background: #166534; }
+.history-item .suspicious { background: #854d0e; }
+.history-item .malicious { background: #7f1d1d; }
+
+.history-item .score {
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.history-item .date {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentinelLite - Malware Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ SentinelLite</h1>
+            <p>Educational Malware Detection Framework</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <h2>Upload Suspicious File</h2>
+                <form id="uploadForm">
+                    <input type="file" id="fileInput" accept="*/*" required>
+                    <button type="submit">Scan File</button>
+                </form>
+                <div id="loading" class="hidden">⏳ Scanning... Please wait.</div>
+            </div>
+
+            <div id="results" class="results-section hidden">
+                <h2>Scan Results</h2>
+                <div id="verdictBadge" class="verdict"></div>
+                <div class="details">
+                    <p><strong>Filename:</strong> <span id="filename"></span></p>
+                    <p><strong>SHA256:</strong> <code id="sha256"></code></p>
+                    <p><strong>Risk Score:</strong> <span id="riskScore"></span>/100+</p>
+                    <p><strong>File Entropy:</strong> <span id="entropy"></span></p>
+                    <p><strong>Detection Reasons:</strong></p>
+                    <ul id="reasons"></ul>
+                    
+                    <div id="yaraMatches" class="analysis-block hidden">
+                        <h3>YARA Rule Matches</h3>
+                        <ul id="yaraList"></ul>
+                    </div>
+                    
+                    <div id="peDetails" class="analysis-block hidden">
+                        <h3>PE Analysis</h3>
+                        <p><strong>Suspicious Imports:</strong> <span id="suspiciousImports"></span></p>
+                        <p><strong>Compile Time:</strong> <span id="compileTime"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h2>Recent Scans</h2>
+                <div id="historyList">
+                    <p>Loading history...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>⚠️ For educational and research use only. Do not use as primary defense.</p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
