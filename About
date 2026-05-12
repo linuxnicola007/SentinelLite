@@ -1,0 +1,32 @@
+# SentinelLite 🛡️
+
+**Educational Malware Detection Framework** – Learn how antivirus engines, EDRs, and sandboxes analyze suspicious files using static analysis techniques.
+
+## ✨ Features
+
+- 🌐 Web dashboard (HTML/CSS/JS) – upload files, view scan results
+- 🔐 SHA256 hashing + known malware hash database (SQLite)
+- 🧩 YARA rule scanning (custom rules: PowerShell abuse, process injection, encoded commands)
+- 📄 PE file analysis (imported APIs, sections, compile time, entropy)
+- ⚖️ Risk scoring engine (YARA +30, high entropy +20, suspicious imports +25, known hash +100)
+- 📊 JSON reports & scan history
+- 📁 Modular, well-commented code – easy to extend into AI-powered scanner or EDR
+
+## 🧠 How It Works
+
+1. User uploads a file via the dashboard
+2. System calculates SHA256 and checks against local malware hash DB
+3. YARA rules scan the file for malicious patterns
+4. If it's a Windows executable (`pefile`), it extracts imports and section entropy
+5. Risk score is computed (0–20 = Safe, 21–50 = Suspicious, 51+ = Malicious)
+6. Report is saved (JSON + SQLite) and displayed on the dashboard
+
+## 🛠️ Tech Stack
+
+- **Backend**: Python, FastAPI, Uvicorn
+- **Frontend**: HTML, CSS, JavaScript (vanilla)
+- **Database**: SQLite
+- **Analysis**: `yara-python`, `pefile`, `hashlib`
+- **Logging**: Built-in `logging` module
+
+## 📂 Project Structure
