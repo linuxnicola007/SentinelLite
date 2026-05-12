@@ -5,17 +5,39 @@ SentinelLite is a lightweight, beginner-friendly malware scanner built with Pyth
 ## ⚠️ Educational Purpose Only
 This tool is designed for learning and research. Do not use it as a primary defense system.
 
-##Structure
+## Structure
 SentinelLite/
-├── app.py 
-├── scanner/ 
-├── yara_rules/ 
-├── templates/
-├── static/ 
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── scanner/
+│   ├── __init__.py
+│   ├── hashing.py
+│   ├── yara_scan.py
+│   ├── pe_analysis.py
+│   ├── risk_engine.py
+│   └── report_generator.py
+│
+├── yara_rules/
+│   └── suspicious_rules.yar
+│
+├── database/
+│   └── (malware_hashes.db will be created automatically)
+│
 ├── uploads/
-├── reports/ 
-├── logs/
-└── database/ 
+├── reports/
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── style.css
+│   └── app.js
+│
+└── logs/
+    └── (scan.log will be created automatically)
 
 ## Features
 - File upload dashboard
