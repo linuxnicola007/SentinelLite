@@ -5,6 +5,19 @@ SentinelLite is a lightweight, beginner-friendly malware scanner built with Pyth
 ## ⚠️ Educational Purpose Only
 This tool is designed for learning and research. Do not use it as a primary defense system.
 
+##Structure
+
+  SentinelLite/
+├── app.py # FastAPI server & endpoints
+├── scanner/ # Core modules (hashing, yara, pe, risk, report)
+├── yara_rules/ # Custom YARA rules
+├── templates/ # HTML dashboard
+├── static/ # CSS/JS
+├── uploads/ # Temporary uploaded files
+├── reports/ # JSON scan reports
+├── logs/ # Activity log
+└── database/ # SQLite (malware_hashes.db + scan_history)
+
 ## Features
 - File upload dashboard
 - SHA256 hash matching against known malware database
@@ -24,3 +37,52 @@ This tool is designed for learning and research. Do not use it as a primary defe
 3. **Install Python dependencies**:
    ```bash
    pip install -r requirements.txt
+
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/linuxnicola007/SentinelLite.git
+cd SentinelLite
+pip install -r requirements.txt
+# Install YARA system dependency (see README for OS-specific instructions)
+python app.py
+# Open http://localhost:8000
+
+
+🧪 Test with EICAR
+Create a file with the EICAR test string – SentinelLite will detect it as Malicious (hash match).
+
+📚 Educational Purpose Only
+This framework is designed for learning and research. Do not use as a primary security solution.
+
+🔮 Future Expansion Ideas
+Add machine learning classifier (e.g., LightGBM on PE features)
+
+Implement behavioral analysis (sandbox)
+
+Real-time file system monitoring (EDR-like)
+
+Integrate VirusTotal API
+
+Add more YARA rules from community repos
+
+🤝 Contributing
+Pull requests, new YARA rules, and educational improvements are welcome!
+
+📄 License
+MIT – free to use, modify, and distribute for educational purposes.
+
+text
+
+---
+
+## Optional: Badges (Markdown)
+
+Add these at the top of your `README.md` for a professional look:
+
+```markdown
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.104-green.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Static Analysis](https://img.shields.io/badge/Static%20Analysis-YARA%20%2B%20PE-orange)
